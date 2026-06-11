@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geisi Sobrancelhas | Design & Micropigmentação</title>
+    <style>
+        /* --- ESTILOS CSS --- */
+        :root {
+            --cor-principal: #e8c5b8; /* Rosé Gold Suave */
+            --cor-escura: #1a1a1a;     /* Preto Sofisticado */
+            --cor-fundo: #faf8f6;      /* Off-White */
+            --texto: #333333;
+            --texto-claro: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', 'Segoe UI', serif;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--texto);
+            line-height: 1.6;
+        }
+
+        /* Menu de Navegação */
+        header {
+            background-color: var(--cor-escura);
+            padding: 1.5rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--cor-principal);
+        }
+
+        .logo {
+            color: var(--cor-principal);
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: var(--texto-claro);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--cor-principal);
+        }
+
+        /* Seção Principal (Hero) */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--texto-claro);
+            padding: 2rem;
+            margin-top: 70px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        /* Botões */
+        .btn-whatsapp {
+            background-color: #25d366; /* Verde do Whats */
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            background-color: #20ba5a;
+        }
+
+        /* Container de Conteúdo */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+
+        .titulo-secao {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--cor-escura);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .titulo-secao::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--cor-principal);
+            margin: 0.5rem auto 0 auto;
+        }
+
+        /* Grid de Serviços */
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .servico-card {
+            background-color: var(--texto-claro);
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            transition: translateY 0.3s;
+        }
+
+        .servico-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cor-principal);
+        }
+
+        .servico-icone {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .servico-card h3 {
+            font-size: 1.5rem;
+            color: var(--cor-escura);
+            margin-bottom: 1rem;
+        }
+
+        /* Seção Contato / Agendamento */
+        .contato-box {
+            background-color: var(--cor-escura);
+            color: var(--texto-claro);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .contato-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--cor-principal);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #111;
+            color: #777;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav a {
+                margin: 0 0.8rem;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">GEISI SOBRANCELHAS</div>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Agendamento</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h2>Realce a sua beleza natural</h2>
+        <p>Especialista em olhar, desenhando sobrancelhas que combinam perfeitamente com o formato do seu rosto e sua personalidade.</p>
+        <a href="https://wa.me/5543996390043?text=Olá%20Geisi,%20gostaria de agendar um horário!" target="_blank" class="btn-whatsapp">
+            Agendar via WhatsApp 📱
+        </a>
+    </section>
+
+    <main class="container" id="servicos">
+        <h2 class="titulo-secao">Nossos Serviços</h2>
+        
+        <div class="servicos-grid">
+            <div class="servico-card">
+                <span class="servico-icone">📐</span>
+                <h3>Design de Sobrancelhas</h3>
+                <p>Estudo das linhas do seu rosto (visagismo) para remover os pelos certos, trazendo simetria, arqueamento ideal e harmonia para o olhar.</p>
+            </div>
+
+            <div class="servico-card">
+                <span class="servico-icone">✨</span>
+                <h3>Aplicação de Henna</h3>
+                <p>Ideal para preencher falhas, dar volume e destacar o design. Utilizo pigmentos de alta fixação que garantem um efeito sombreado natural.</p>
+            </div>
+
+            <div class="servico-card">
+                <span class="servico-icone">✒️</span>
+                <h3>Micropigmentação</h3>
+                <p>Procedimento semi-permanente fio a fio ou shadow. Perfeito para quem busca praticidade no dia a dia, preenchimento realista e longa duração.</p>
+            </div>
+        </div>
+    </main>
+
+    <section class="container" id="contato">
+        <div class="contato-box">
+            <h3>Fale Conosco</h3>
+            <p style="margin-bottom: 2rem;">Atendimento personalizado com hora marcada. Venha renovar a sua autoestima!</p>
+            
+            <p style="font-size: 1.3rem; margin-bottom: 1.5rem;">
+                📞 Telefone / WhatsApp: <strong style="color: var(--cor-principal);">(43) 99639-0043</strong>
+            </p>
+
+            <a href="https://wa.me/5543996390043?text=Olá Geisi, gostaria de consultar seus horários disponíveis." target="_blank" class="btn-whatsapp">
+                Chamar no WhatsApp agora
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Geisi Sobrancelhas. Todos os direitos reservados.</p>
+        <p style="font-size: 0.75rem; margin-top: 0.5rem;">Desenvolvido com carinho para o seu negócio.</p>
+    </footer>
+
+    <script>
+        // Efeito simples de rolagem suave ao clicar nos links do menu
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const idDestino = this.getAttribute('href');
+                const elementoDestino = document.querySelector(idDestino);
+                
+                window.scrollTo({
+                    top: elementoDestino.offsetTop - 80, // Desconto da altura do menu fixo
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
